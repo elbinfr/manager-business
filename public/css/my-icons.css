@@ -1,0 +1,59 @@
+/*
+* ICONS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+* Color icons: #2083D6 (blue) / ;
+*/
+.icon-alarm{
+  background: url("../images/icons/alarm.png") no-repeat;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+}
+
+.icon-add-blue{
+	background: url('../images/icons/icon_add_blue.png') no-repeat center;
+	height: 16px;
+	width: 16px;
+	vertical-align: middle;
+}
+
+.icon-cancel-blue{
+	background: url('../images/icons/icon_cancel_blue.png') no-repeat center;
+	height: 16px;
+	width: 16px;
+	vertical-align: middle;
+}
+
+.icon-delete-blue{
+	background: url('../images/icons/icon_delete_blue.png') no-repeat center;
+	height: 16px;
+	width: 16px;
+	vertical-align: middle;
+}
+
+.icon-edit-blue{
+	background: url('../images/icons/icon_edit_blue.png') no-repeat center;
+	height: 16px;
+	width: 16px;
+	vertical-align: middle;
+}
+
+.icon-save-blue{
+	background: url('../images/icons/icon_save_blue.png') no-repeat center;
+	height: 16px;
+	width: 16px;
+	vertical-align: middle;
+}
+
+.icon-save-green{
+	background: url('../images/icons/icon_save_green.png') no-repeat center;
+	height: 16px;
+	width: 16px;
+	vertical-align: middle;
+}
+
+.icon-save-black{
+	background: url('../images/icons/icon_save_black.png') no-repeat center;
+	height: 16px;
+	width: 16px;
+	vertical-align: middle;
+}

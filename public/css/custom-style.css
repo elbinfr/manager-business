@@ -1,0 +1,52 @@
+.menu-usuario > li > a:hover{
+  background-color: #595959;
+  color: #FFF;
+}
+
+.total-width{
+    width: 100%;
+}
+
+.font-dosis{
+  font-family: 'Dosis', sans-serif;
+}
+
+td.details-control {
+    background: url('../images/icons/icon_down_blue.png') no-repeat center center;
+    cursor: pointer;
+}
+tr.shown td.details-control {
+    background: url('../images/icons/icon_up_red.png') no-repeat center center;
+}
+
+.element-group{
+    margin-bottom: 15px;
+}
+
+.black{
+    font-weight: 600;
+}
+
+/* ===== Headline ===== */
+
+.headline{
+    margin-top: 0 !important;
+    border-bottom: 1px dashed #2494F2;/*2494F2   dadada*/
+}
+
+.headline > span {
+    background-color: white;
+    padding-right: 5px;
+    font-weight: bolder;
+    color: #2494F2;
+}
+
+.first-child {
+    margin-top: 0 !important;
+}
+
+/* ====================== */
+
+.letra-roja{
+    color: #D83030;
+}
