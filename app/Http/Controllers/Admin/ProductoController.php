@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use Illuminate\Validation\Rule;
 use Validator;
 
 use App\Producto;
@@ -44,7 +45,12 @@ class ProductoController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'nombre'                => 'required|min:3|max:150',
+            'nombre'                => [
+                'required',
+                'min:3',
+                'max:150',
+                Rule::unique('productos')->where('unidad_id', $request->unidad_id)
+            ],
             'unidad_id'             => 'required|exists:unidades,id',
             'precio_referencial'    => 'required|numeric|min:0'
         ]);
@@ -75,7 +81,7 @@ class ProductoController extends Controller
     {
         $producto = Producto::findOrFail($id);
 
-        //return view()
+        return view('admin.productos.show', compact('producto'));
     }
 
     /**
@@ -86,7 +92,10 @@ class ProductoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $unidades = Unidad::dropDawn();
+        $producto = Producto::findOrFail($id);
+
+        return view('admin.productos.edit', compact('producto', 'unidades'));
     }
 
     /**
@@ -98,7 +107,33 @@ class ProductoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $producto = Producto::findOrFail($id);
+
+        $validator = Validator::make($request->all(), [
+            'nombre' => [
+                'required',
+                'min:3',
+                'max:150',
+                Rule::unique('productos')->ignore($producto->id)->where('unidad_id', $request->unidad_id)
+            ],
+            'unidad_id'             => 'required|exists:unidades,id',
+            'precio_referencial'    => 'required|numeric|min:0'
+        ]);
+
+        if($validator->fails()){
+            return response()->json([
+                'status'    => 422,
+                'responseJSON'  => $validator->errors()
+            ]);
+        }
+
+        $producto->unidad_id = $request->unidad_id;
+        $producto->nombre = trim($request->nombre);
+        $producto->precio_referencial = (double) $request->precio_referencial;
+        $producto->save();
+
+        return view('admin.productos.index');
+
     }
 
     /**
@@ -109,6 +144,13 @@ class ProductoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $producto = Producto::findOrFail($id);
+
+        $producto->estado = 'inactivo';
+        $producto->save();
+
+        return response()->json([
+            'status' => 'success'
+        ]);
     }
 }

@@ -22,10 +22,10 @@
                         Precio Referencial
                     </div>
                     <div class="col-sm-9">
-                        {{ $producto->precio_referencia }}
+                        {{ $producto->precio_referencial }}
                     </div>
                     <div class="col-sm-12" style="text-align: right;">
-                        <a href="{{ url('/admin/unidades') }}" class="btn btn-success btn-crud" data-option="">
+                        <a href="{{ url('/admin/productos') }}" class="btn btn-success btn-crud" data-option="">
                             Ir a Lista de Productos
                         </a>
                     </div>

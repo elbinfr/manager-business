@@ -38,7 +38,7 @@
                 "defaultContent": ''
             },
             {data: 'nombre'},
-            {data: 'unidad_id'},
+            {data: 'nombre_unidad'},
             {data: 'precio_referencial'}
         ];
 

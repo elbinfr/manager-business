@@ -30,7 +30,7 @@ Route::get('/unidades', function(){
 });
 
 Route::get('/productos', function(){
-    return Datatables::eloquent(App\Producto::where('estado','activo')->orderBy('nombre', 'ASC'))->make(true);
+    return Datatables::collection(App\Producto::dataTable())->make(true);
 });
 
 

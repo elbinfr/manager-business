@@ -22,9 +22,6 @@
             </a>
         </li>
         <li>
-            <a href="#" class="btn-menu">Proveedores</a>
-        </li>
-        <li>
             <a href="{{ url('/admin/unidades') }}" class="btn-menu" data-menu="Datos" data-submenu="Unidades de Medida">
                 Unidades de Medida
             </a>
