@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="{{ asset('css/nanoscroller.css') }}" >
     <link rel="stylesheet" href="{{ asset('css/bootstrap-switch.css') }}" >
     <link rel="stylesheet" href="{{ asset('css/bootstrap-datetimepicker.css') }}" >
-    <link rel="stylesheet" href="{{ asset('css/select2.css') }}" >
+    <link rel="stylesheet" href="{{ asset('plugins/select2/select2-bootstrap.css') }}" >
     <link rel="stylesheet" href="{{ asset('css/slider.css') }}" >
     <link rel="stylesheet" href="{{ asset('css/dataTables.bootstrap.min.css') }}" >
     <link rel="stylesheet" href="{{ asset('css/fuentes.css') }}">
@@ -137,6 +137,8 @@
 
 </div>
 
+@include('layouts.custom')
+
 <!-- SCRIPTS -->
 <script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/jquery.nanoscroller.js') }}"></script>
@@ -147,7 +149,7 @@
 <script type="text/javascript" src="{{ asset('js/bootstrap-switch.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/bootstrap-datetimepicker.js') }}"></script>
 
-<script type="text/javascript" src="{{ asset('js/select2.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('plugins/select2/select2.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/bootstrap-slider.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/jquery.gritter.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/jquery.dataTables.min.js') }}"></script>

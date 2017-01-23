@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use App\Cliente;
+
 class VentaController extends Controller
 {
     /**
@@ -24,7 +26,8 @@ class VentaController extends Controller
      */
     public function create()
     {
-        //
+        $clientes = Cliente::where('estado', 'activo')->orderBy('nombre', 'asc')->get();
+        return view('admin.ventas.create', compact('clientes'));
     }
 
     /**

@@ -50,3 +50,31 @@ tr.shown td.details-control {
 .letra-roja{
     color: #D83030;
 }
+
+/* ======= Tabla Detalle de Venta ======= */
+
+.table-detail th{
+    text-align: center;
+    font-weight: 600;
+}
+
+.table-detail tbody > tr > td{
+    vertical-align: middle;
+}
+
+.group-venta{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.col-corta{
+    width: 120px;
+}
+
+.col-importe{
+    text-align: right;
+}
+
+.amount{
+    text-align: right;
+}

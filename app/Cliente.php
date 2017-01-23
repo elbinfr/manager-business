@@ -19,4 +19,9 @@ class Cliente extends Model
         'saldo_inicial',
         'activo'
     ];
+
+    public static function dropDawn()
+    {
+        return Cliente::where('estado', 'activo')->pluck('nombre', 'numero_documento');
+    }
 }
