@@ -5,9 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-use App\Cliente;
-
-class VentaController extends Controller
+class ConfiguracionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +14,7 @@ class VentaController extends Controller
      */
     public function index()
     {
-        return view('admin.ventas.index');
+        //
     }
 
     /**
@@ -26,8 +24,7 @@ class VentaController extends Controller
      */
     public function create()
     {
-        $clientes = Cliente::where('estado', 'activo')->orderBy('nombre', 'asc')->get();
-        return view('admin.ventas.create', compact('clientes'));
+        //
     }
 
     /**
@@ -38,11 +35,7 @@ class VentaController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
-
-        return response()->json([
-            'data' => $data
-        ]);
+        //
     }
 
     /**

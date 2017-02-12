@@ -4,6 +4,11 @@
     </a>
 </li>
 <li>
+    <a href="#" class="btn-menu">
+        <i class="fa fa-cogs"></i><span>Configuraci&oacute;n</span>
+    </a>
+</li>
+<li>
     <a href="#"><i class="fa fa-list"></i><span>Datos</span></a>
     <ul class="sub-menu">
         <li>
@@ -29,7 +34,7 @@
     </ul>
 </li>
 <li>
-    <a href="#"><i class="fa fa-truck"></i><span>Log&iacute;tica</span></a>
+    <a href="#"><i class="fa fa-truck"></i><span>Log&iacute;stica</span></a>
     <ul class="sub-menu">
         <li>
             <a href="#" class="btn-menu">Compras</a>

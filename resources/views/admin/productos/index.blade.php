@@ -26,7 +26,7 @@
     (function(){
         var productos_dt = "#productos-dt";
         var url_base = "{{ url('/admin/productos') }}";
-        var url_api = "/api/productos";
+        var url_api = "{{ url('/api/productos') }}";
         var token = "{{ csrf_token() }}";
 
         var columns = [

@@ -14,9 +14,9 @@ Vue.component('select-product', {
     methods: {
         seleccionarProducto: function(event){
             var producto = findById(this.productos, this.item.id);
-            this.item.unidad = producto.unidad;
+            this.item.unidad = producto.nombre_unidad;
             this.item.nombre = producto.nombre;
-            this.item.precio = producto.precio;
+            this.item.precio = producto.precio_referencial;
         }
     }
 });
@@ -27,41 +27,38 @@ Vue.filter('amount', function(item){
 });
 
 var vm = new Vue({
-    el: '#main-content',
+    el: '#div-sale',
     data: {
+        numero_factura: '',
+        fecha_venta: '',
+        numero_guia: '',
         porcentaje_igv: 0.18,
         valor_igv: 0,
         subtotal: 0,
         total: 0,
-        productos: [
-            {
-                id: 1,
-                unidad: 'Toneladas',
-                nombre: 'Producto 1',
-                precio: 10.10
-            },
-            {
-                id: 2,
-                unidad: 'Toneladas',
-                nombre: 'Producto 2',
-                precio: 20.20
-            },
-            {
-                id: 3,
-                unidad: 'metros',
-                nombre: 'Producto 3',
-                precio: 30.30
-            },
-            {
-                id: 4,
-                unidad: 'kilos',
-                nombre: 'Producto 4',
-                precio: 40.40
-            }
-        ],
+        clientes: [],
+        cliente: {
+            id: '',
+            nombre: '',
+            numero_documento: '',
+            direccion: ''
+        },
+        productos: [],
         items: []
     },
+    mounted: function(){
+        $.getJSON('/api/datos-para-venta', [], function(response){
+            vm.productos = response.productos;
+            vm.clientes = response.clientes;
+        });
+    },
     methods: {
+        seleccionarCliente: function(event){
+            var cliente_elegido = findById(this.clientes, this.cliente.id);
+            this.cliente.nombre = cliente_elegido.nombre;
+            this.cliente.numero_documento = cliente_elegido.numero_documento;
+            this.cliente.direccion = cliente_elegido.direccion;
+        },
         agregarItem: function(event){
             var nuevo_item = {
                 id: '',
@@ -77,6 +74,16 @@ var vm = new Vue({
         eliminarItem: function(item){
             var index = this.items.indexOf(item);
             this.items.splice(index, 1);
+        },
+        guardar: function(token){
+            var parameters = {
+                _token: token,
+                cliente: this.cliente,
+                items: this.items
+            };
+            $.post('/admin/ventas', parameters, function (response) {
+                console.log(response);
+            });
         }
     },
     computed: {

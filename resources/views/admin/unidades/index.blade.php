@@ -25,7 +25,7 @@
     (function(){
         var unidades_dt = "#unidades-dt";
         var url_base = "{{ url('/admin/unidades') }}";
-        var url_api = "/api/unidades";
+        var url_api = "{{ url('/api/unidades') }}";
         var token = "{{ csrf_token() }}";
 
         var columns = [

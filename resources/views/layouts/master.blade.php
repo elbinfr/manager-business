@@ -48,7 +48,7 @@
             <ul class="nav navbar-nav navbar-right user-nav">
                 <li class="dropdown profile_menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="padding-top: 15px;">
-                        <img alt="Avatar" src="images/user.png"/>
+                        <img alt="Avatar" src="{{ asset('images/user.png') }}"/>
                         {{ Auth::user()->empleado->printUserName() }}
                         <b class="caret"></b>
                     </a>

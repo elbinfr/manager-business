@@ -28,7 +28,7 @@
     (function(){
         var empleados_dt = "#empleados-dt";
         var url_base = "{{ url('/admin/empleados') }}";
-        var url_api = "/api/empleados";
+        var url_api = "{{ url('/api/empleados') }}";
         var token = "{{ csrf_token() }}";
 
         var columns = [

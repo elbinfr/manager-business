@@ -28,7 +28,7 @@
     (function(){
         var clientes_dt = "#clientes-dt";
         var url_base = "{{ url('/admin/clientes') }}";
-        var url_api = "/api/clientes";
+        var url_api = "{{ url('/api/clientes') }}";
         var token = "{{ csrf_token() }}";
 
         var columns = [

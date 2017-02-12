@@ -33,4 +33,13 @@ Route::get('/productos', function(){
     return Datatables::collection(App\Producto::dataTable())->make(true);
 });
 
+Route::get('/datos-para-venta', function(){
+
+    return [
+        'clientes'  => App\Cliente::orderBy('nombre', 'ASC')->get(),
+        'productos' => App\Producto::dataTable()
+    ];
+
+});
+
 

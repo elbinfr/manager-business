@@ -55,7 +55,7 @@ function initDataTableServerSideCRUD(id_element, url_base, url_api, token, colum
 		"serverSide": true,
 		"ajax": url_api,
 		"language": {
-			"url": "js/Spanish.json"
+			"url": "/js/Spanish.json"
 		},
 		"fixedColumns": true,
 		"columns": columns
