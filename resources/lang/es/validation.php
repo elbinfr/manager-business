@@ -148,6 +148,7 @@ return [
         'subject'               => 'asunto',
         'message'               => 'mensaje',
         'unidad_id'             => 'unidad de medida',
+        'anio_fizcal'           => 'año fizcal',
     ],
 
 ];

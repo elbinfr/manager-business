@@ -4,7 +4,7 @@
     </a>
 </li>
 <li>
-    <a href="#" class="btn-menu">
+    <a href="{{ url('/admin/configuraciones') }}" class="btn-menu" data-menu="Configuraciones" data-submenu="">
         <i class="fa fa-cogs"></i><span>Configuraci&oacute;n</span>
     </a>
 </li>

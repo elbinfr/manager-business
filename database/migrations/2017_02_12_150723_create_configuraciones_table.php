@@ -21,6 +21,7 @@ class CreateConfiguracionesTable extends Migration
             $table->integer('numero_factura');
             $table->integer('serie_guia');
             $table->integer('numero_guia');
+            $table->enum('estado', ['activo', 'inactivo'])->default('activo');
             $table->timestamps();
         });
     }

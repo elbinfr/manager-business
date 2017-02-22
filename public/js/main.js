@@ -164,3 +164,70 @@ function printSuccess(){
 		$content.prepend(content_success);
 	}, 400);
 }
+
+/*
+* INPUT TEXT - FORMS
+ */
+
+function backspace(event){
+	var element = event.target;
+	var current_value = $(element).val();
+	current_value = current_value.substring(0, current_value.length-1);
+	$(element).val(current_value);
+
+	return true;
+}
+
+function validateNumberInteger(event){
+	if( isNumberKey(event.keyCode) ){
+		return true;
+	}else{
+		return false;
+	}
+}
+
+function validateNumberDecimal(event){
+	var element = event.target;
+	if( isNumberKey(event.keyCode) || isPointKey(event.keyCode) ){
+		if(isPointKey(event.keyCode)){
+			var value = $(element).val();
+			if(value === '' || countPoints(value) >= 1){
+				return false;
+			}else{
+				return true;
+			}
+		}else{
+			return true;
+		}
+	}else{
+		return false;
+	}
+}
+
+function isNumberKey(key){
+	if( (key >= 48 && key <=57) || (key >= 96 && key <= 105)){
+		return true;
+	}else{
+		return false;
+	}
+}
+
+function isPointKey(key){
+	if(key === 110 || key === 190){
+		return true;
+	}else{
+		return false;
+	}
+}
+
+function countPoints(value){
+	var quantity = 0;
+	var value = value.toString();
+	for(i = 0; i < value.length ; i++){
+		if(value.charAt(i) === '.'){
+			quantity++;
+		}
+	}
+
+	return quantity;
+}

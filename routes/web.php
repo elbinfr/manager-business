@@ -24,6 +24,8 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'namespace' => 'Admin
         return view('layouts.master');
     });
 
+    Route::resource('/configuraciones', 'ConfiguracionController');
+
     //+++++ Datos +++++++++++++++++++++++++++++++++++++
     Route::resource('/clientes', 'ClienteController');
     Route::resource('/empleados', 'EmpleadoController');

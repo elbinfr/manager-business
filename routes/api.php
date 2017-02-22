@@ -17,6 +17,10 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:api');
 
+Route::get('/configuraciones', function(){
+    return Datatables::eloquent(App\Configuracion::where('estado','activo')->orderBy('anio_fizcal', 'DESC'))->make(true);
+});
+
 Route::get('/clientes', function(){
     return Datatables::eloquent(App\Cliente::where('estado','activo')->orderBy('nombre', 'ASC'))->make(true);
 });

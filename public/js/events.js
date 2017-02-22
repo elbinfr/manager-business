@@ -77,3 +77,37 @@ $(main_content).on('submit', '.form-crud', function(event){
         printListErrors(response);
     });
 });
+
+$(main_content).on('keydown', '.decimal', function(event){
+    if( (event.altKey || event.keyCode == 46 || event.keyCode == 9 || event.keyCode == 13) ){
+        return true;
+    }else{
+        event.preventDefault();
+        var current_value = $(this).val();
+
+        if (event.keyCode==8){
+            backspace(event);
+        }
+        if(validateNumberDecimal(event)){
+            current_value = current_value + event.key;
+            $(this).val(current_value);
+        }
+    }
+});
+
+$(main_content).on('keydown', '.integer', function(event){
+    if( (event.altKey || event.keyCode == 46 || event.keyCode == 9 || event.keyCode == 13) ){
+        return true;
+    }else{
+        event.preventDefault();
+        var current_value = $(this).val();
+
+        if (event.keyCode==8){
+            backspace(event);
+        }
+        if(validateNumberInteger(event)){
+            current_value = current_value + event.key;
+            $(this).val(current_value);
+        }
+    }
+});
